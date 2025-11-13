@@ -93,7 +93,7 @@ const Products = () => {
   if (isLoading) {
     return (
       <Box m="1.5rem 2.5rem">
-        <Header title="PRODUCTS" subtitle="See your list of products." />
+        <Header title="PRODUTOS" subtitle="Veja sua lista de produtos." />
         <Typography>Loading products...</Typography>
       </Box>
     );
@@ -102,7 +102,7 @@ const Products = () => {
   if (error) {
     return (
       <Box m="1.5rem 2.5rem">
-        <Header title="PRODUCTS" subtitle="See your list of products." />
+        <Header title="PRODUTOS" subtitle="Veja sua lista de produtos." />
         <Typography color="error">
           Error loading products: {error.message}
         </Typography>
@@ -114,7 +114,7 @@ const Products = () => {
   if (!data || !Array.isArray(data) || data.length === 0) {
     return (
       <Box m="1.5rem 2.5rem">
-        <Header title="PRODUCTS" subtitle="See your list of products." />
+        <Header title="PRODUTOS" subtitle="Veja sua lista de produtos." />
         <Typography>No products available</Typography>
       </Box>
     );
@@ -122,7 +122,7 @@ const Products = () => {
 
   return (
     <Box m="1.5rem 2.5rem">
-      <Header title="PRODUCTS" subtitle="See your list of products." />
+      <Header title="PRODUTOS" subtitle="Veja sua lista de produtos." />
       <Box
         mt="20px"
         display="grid"
