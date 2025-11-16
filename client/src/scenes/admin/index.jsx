@@ -17,17 +17,17 @@ const Admin = () => {
     },
     {
       field: "name",
-      headerName: "Name",
+      headerName: "Nome",
       flex: 0.5,
     },
     {
       field: "email",
-      headerName: "Email",
+      headerName: "E-mail",
       flex: 1,
     },
     {
       field: "phoneNumber",
-      headerName: "Phone Number",
+      headerName: "Telefone",
       flex: 0.5,
       renderCell: (params) => {
         return params.value.replace(/^(\d{3})(\d{3})(\d{4})/, "($1)$2-$3");
@@ -35,24 +35,24 @@ const Admin = () => {
     },
     {
       field: "country",
-      headerName: "Country",
+      headerName: "País",
       flex: 0.4,
     },
     {
       field: "occupation",
-      headerName: "Occupation",
+      headerName: "Profissão",
       flex: 1,
     },
     {
       field: "role",
-      headerName: "Role",
+      headerName: "Cargo",
       flex: 0.5,
     },
   ];
 
   return (
     <Box m="1.5rem 2.5rem">
-      <Header title="ADMINS" subtitle="Managing admins and list of admins" />
+      <Header title="ADMINISTRAÇÃO" subtitle="Gerenciamento e lista de administradores" />
       <Box
         mt="40px"
         height="75vh"

@@ -34,26 +34,26 @@ const Dashboard = () => {
     },
     {
       field: "userId",
-      headerName: "User ID",
+      headerName: "ID do Usuário",
       flex: 1,
     },
     {
       field: "createdAt",
-      headerName: "CreatedAt",
+      headerName: "Data de Criação",
       flex: 1,
     },
     {
       field: "products",
-      headerName: "# of Products",
+      headerName: "Nº de Produtos",
       flex: 0.5,
       sortable: false,
       renderCell: (params) => params.value.length,
     },
     {
       field: "cost",
-      headerName: "Cost",
+      headerName: "Custo",
       flex: 1,
-      renderCell: (params) => `$${Number(params.value).toFixed(2)}`,
+      renderCell: (params) => `R$${Number(params.value).toFixed(2)}`,
     },
   ];
 
@@ -73,7 +73,7 @@ const Dashboard = () => {
             }}
           >
             <DownloadOutlined sx={{ mr: "10px" }} />
-            Download Reports
+            Baixar Relatórios
           </Button>
         </Box>
       </FlexBetween>
@@ -90,10 +90,10 @@ const Dashboard = () => {
       >
         {/* ROW 1 */}
         <StatBox
-          title="Total Customers"
+          title="Total de Clientes"
           value={data && data.totalCustomers}
           increase="+14%"
-          description="Since last month"
+          description="Desde o mês passado"
           icon={
             <Email
               sx={{ color: theme.palette.secondary[300], fontSize: "26px" }}
@@ -101,10 +101,10 @@ const Dashboard = () => {
           }
         />
         <StatBox
-          title="Sales Today"
+          title="Vendas Hoje"
           value={data && data.todayStats.totalSales}
           increase="+21%"
-          description="Since last month"
+          description="Desde o mês passado"
           icon={
             <PointOfSale
               sx={{ color: theme.palette.secondary[300], fontSize: "26px" }}
@@ -121,10 +121,10 @@ const Dashboard = () => {
           <OverviewChart view="sales" isDashboard={true} />
         </Box>
         <StatBox
-          title="Monthly Sales"
+          title="Vendas Mensais"
           value={data && data.thisMonthStats.totalSales}
           increase="+5%"
-          description="Since last month"
+          description="Desde o mês passado"
           icon={
             <PersonAdd
               sx={{ color: theme.palette.secondary[300], fontSize: "26px" }}
@@ -132,10 +132,10 @@ const Dashboard = () => {
           }
         />
         <StatBox
-          title="Yearly Sales"
+          title="Vendas Anuais"
           value={data && data.yearlySalesTotal}
           increase="+43%"
-          description="Since last month"
+          description="Desde o mês passado"
           icon={
             <Traffic
               sx={{ color: theme.palette.secondary[300], fontSize: "26px" }}
@@ -188,7 +188,7 @@ const Dashboard = () => {
           borderRadius="0.55rem"
         >
           <Typography variant="h6" sx={{ color: theme.palette.secondary[100] }}>
-            Sales By Category
+            Vendas por Categoria
           </Typography>
           <BreakdownChart isDashboard={true} />
           <Typography
@@ -196,8 +196,7 @@ const Dashboard = () => {
             fontSize="0.8rem"
             sx={{ color: theme.palette.secondary[200] }}
           >
-            Breakdown of real states and information via category for revenue
-            made for this year and total sales.
+            Detalhamento de vendas e informações por categoria da receita obtida este ano e total de vendas.
           </Typography>
         </Box>
       </Box>

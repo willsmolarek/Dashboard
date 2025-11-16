@@ -11,7 +11,7 @@ const Geography = () => {
 
   return (
     <Box m="1.5rem 2.5rem">
-      <Header title="GEOGRAPHY" subtitle="Find where your users are located." />
+      <Header title="GEOGRAFIA" subtitle="Encontre onde seus usuários estão localizados." />
       <Box
         mt="40px"
         height="75vh"
@@ -92,7 +92,7 @@ const Geography = () => {
             ]}
           />
         ) : (
-          <>Loading...</>
+          <>Carregando...</>
         )}
       </Box>
     </Box>

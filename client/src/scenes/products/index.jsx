@@ -47,7 +47,7 @@ const Product = ({
           {name}
         </Typography>
         <Typography sx={{ mb: "1.5rem" }} color={theme.palette.secondary[400]}>
-          ${Number(price).toFixed(2)}
+          R${Number(price).toFixed(2)}
         </Typography>
         <Rating value={rating} readOnly />
 
@@ -59,7 +59,7 @@ const Product = ({
           size="small"
           onClick={() => setIsExpanded(!isExpanded)}
         >
-          See More
+          Ver Mais
         </Button>
       </CardActions>
       <Collapse
@@ -71,13 +71,13 @@ const Product = ({
         }}
       >
         <CardContent>
-          <Typography>id: {_id}</Typography>
-          <Typography>Supply Left: {supply}</Typography>
+          <Typography>ID: {_id}</Typography>
+          <Typography>Estoque Disponível: {supply}</Typography>
           <Typography>
-            Yearly Sales This Year: {stat?.yearlySalesTotal || 0}
+            Vendas Anuais Este Ano: {stat?.yearlySalesTotal || 0}
           </Typography>
           <Typography>
-            Yearly Units Sold This Year: {stat?.yearlyTotalSoldUnits || 0}
+            Unidades Vendidas Este Ano: {stat?.yearlyTotalSoldUnits || 0}
           </Typography>
         </CardContent>
       </Collapse>
@@ -94,7 +94,7 @@ const Products = () => {
     return (
       <Box m="1.5rem 2.5rem">
         <Header title="PRODUTOS" subtitle="Veja sua lista de produtos." />
-        <Typography>Loading products...</Typography>
+        <Typography>Carregando produtos...</Typography>
       </Box>
     );
   }
@@ -104,7 +104,7 @@ const Products = () => {
       <Box m="1.5rem 2.5rem">
         <Header title="PRODUTOS" subtitle="Veja sua lista de produtos." />
         <Typography color="error">
-          Error loading products: {error.message}
+          Erro ao carregar produtos: {error.message}
         </Typography>
       </Box>
     );
@@ -115,7 +115,7 @@ const Products = () => {
     return (
       <Box m="1.5rem 2.5rem">
         <Header title="PRODUTOS" subtitle="Veja sua lista de produtos." />
-        <Typography>No products available</Typography>
+        <Typography>Nenhum produto disponível</Typography>
       </Box>
     );
   }
