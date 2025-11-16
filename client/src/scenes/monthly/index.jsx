@@ -40,7 +40,7 @@ const Monthly = () => {
 
   return (
     <Box m="1.5rem 2.5rem">
-      <Header title="MONTHLY SALES" subtitle="Chart of monthlysales" />
+      <Header title="VENDAS MENSAS" subtitle="Gráfico de vendas mensais" />
       <Box height="75vh">
         {data ? (
           <ResponsiveLine
@@ -97,7 +97,7 @@ const Monthly = () => {
               tickSize: 5,
               tickPadding: 5,
               tickRotation: 90,
-              legend: "Month",
+              legend: "Mês",
               legendOffset: 60,
               legendPosition: "middle",
             }}
@@ -146,7 +146,7 @@ const Monthly = () => {
             ]}
           />
         ) : (
-          <>Loading...</>
+          <>Carregando...</>
         )}
       </Box>
     </Box>

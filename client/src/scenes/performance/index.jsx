@@ -19,34 +19,34 @@ const Performance = () => {
     },
     {
       field: "userId",
-      headerName: "User ID",
+      headerName: "ID do Usuário",
       flex: 1,
     },
     {
       field: "createdAt",
-      headerName: "CreatedAt",
+      headerName: "Data de Criação",
       flex: 1,
     },
     {
       field: "products",
-      headerName: "# of Products",
+      headerName: "Nº de Produtos",
       flex: 0.5,
       sortable: false,
       renderCell: (params) => params.value.length,
     },
     {
       field: "cost",
-      headerName: "Cost",
+      headerName: "Custo",
       flex: 1,
-      renderCell: (params) => `$${Number(params.value).toFixed(2)}`,
+      renderCell: (params) => `R$${Number(params.value).toFixed(2)}`,
     },
   ];
 
   return (
     <Box m="1.5rem 2.5rem">
       <Header
-        title="PERFORMANCE"
-        subtitle="Track your Affiliate Sales Performance Here"
+        title="DESEMPENHO"
+        subtitle="Acompanhe o desempenho das suas vendas de afiliado aqui"
       />
       <Box
         mt="40px"

@@ -21,7 +21,7 @@ import { createTheme } from "@mui/material/styles";
 
 function App() {
   const mode = useSelector((state: any) => state.global.mode);
-  const user = useSelector((state: any) => state.global.user); // ✅ Adicione esta linha
+  const user = useSelector((state: any) => state.global.user);
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
   
   return (
@@ -30,7 +30,7 @@ function App() {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Routes>
-            {/* ✅ ROTA DE LOGIN - ADICIONE ESTA LINHA */}
+            {/* ✅ ROTA DE LOGIN */}
             <Route path="/login" element={<Login />} />
             
             {/* ✅ ROTAS PROTEGIDAS - SÓ ACESSÍVEL COM USUÁRIO LOGADO */}
@@ -40,6 +40,20 @@ function App() {
             >
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
               <Route path="/dashboard" element={<Dashboard />} />
+              
+              {/* Rotas em português SEM acentos e SEM codificação */}
+              <Route path="/produtos" element={<Products />} />
+              <Route path="/clientes" element={<Customers />} />
+              <Route path="/transacoes" element={<Transactions />} />
+              <Route path="/geografia" element={<Geography />} />
+              <Route path="/visao-geral" element={<Overview />} />
+              <Route path="/diario" element={<Daily />} />
+              <Route path="/mensal" element={<Monthly />} />
+              <Route path="/detalhamento" element={<Breakdown />} />
+              <Route path="/administracao" element={<Admin />} />
+              <Route path="/desempenho" element={<Performance />} />
+              
+              {/* Rotas em inglês (opcionais - pode remover se quiser só português) */}
               <Route path="/products" element={<Products />} />
               <Route path="/customers" element={<Customers />} />
               <Route path="/transactions" element={<Transactions />} />
@@ -51,6 +65,9 @@ function App() {
               <Route path="/admin" element={<Admin />} />
               <Route path="/performance" element={<Performance />} />
             </Route>
+            
+            {/* ✅ Redirecionamento para fallback */}
+            <Route path="*" element={<Navigate to="/dashboard" replace />} />
           </Routes>
         </ThemeProvider>
       </BrowserRouter>

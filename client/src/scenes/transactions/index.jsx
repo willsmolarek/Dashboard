@@ -30,32 +30,32 @@ const Transactions = () => {
     },
     {
       field: "userId",
-      headerName: "User ID",
+      headerName: "ID do Usuário",
       flex: 1,
     },
     {
       field: "createdAt",
-      headerName: "CreatedAt",
+      headerName: "Data de Criação",
       flex: 1,
     },
     {
       field: "products",
-      headerName: "# of Products",
+      headerName: "Nº de Produtos",
       flex: 0.5,
       sortable: false,
       renderCell: (params) => params.value.length,
     },
     {
       field: "cost",
-      headerName: "Cost",
+      headerName: "Custo",
       flex: 1,
-      renderCell: (params) => `$${Number(params.value).toFixed(2)}`,
+      renderCell: (params) => `R$${Number(params.value).toFixed(2)}`,
     },
   ];
 
   return (
     <Box m="1.5rem 2.5rem">
-      <Header title="TRANSACTIONS" subtitle="Entire list of transactions" />
+      <Header title="TRANSAÇÕES" subtitle="Lista completa de transações" />
       <Box
         height="80vh"
         sx={{

@@ -37,58 +37,57 @@ const navItems = [
   {
     text: "Dashboard",
     icon: <HomeOutlined />,
+    link: "/dashboard"
   },
   {
-    text: "Client Facing",
-    icon: null,
-  },
-  {
-    text: "Products",
+    text: "Produtos",
     icon: <ShoppingCartOutlined />,
+    link: "/produtos"
   },
   {
-    text: "Customers",
+    text: "Clientes",
     icon: <Groups2Outlined />,
+    link: "/clientes"
   },
   {
-    text: "Transactions",
+    text: "Transações",
     icon: <ReceiptLongOutlined />,
+    link: "/transacoes"
   },
   {
-    text: "Geography",
+    text: "Geografia",
     icon: <PublicOutlined />,
+    link: "/geografia"
   },
   {
-    text: "Sales",
-    icon: null,
-  },
-  {
-    text: "Overview",
+    text: "Visão Geral",
     icon: <PointOfSaleOutlined />,
+    link: "/visao-geral"
   },
   {
-    text: "Daily",
+    text: "Diário",
     icon: <TodayOutlined />,
+    link: "/diario"
   },
   {
-    text: "Monthly",
+    text: "Mensal",
     icon: <CalendarMonthOutlined />,
+    link: "/mensal"
   },
   {
-    text: "Breakdown",
+    text: "Detalhamento",
     icon: <PieChartOutlined />,
+    link: "/detalhamento"
   },
   {
-    text: "Management",
-    icon: null,
-  },
-  {
-    text: "Admin",
+    text: "Administração",
     icon: <AdminPanelSettingsOutlined />,
+    link: "/administracao"
   },
   {
-    text: "Performance",
+    text: "Desempenho",
     icon: <TrendingUpOutlined />,
+    link: "/desempenho"
   },
 ];
 
@@ -105,7 +104,7 @@ const Sidebar = ({
   const theme = useTheme();
 
   useEffect(() => {
-    setActive(pathname.substring(1));
+    setActive(pathname);
   }, [pathname]);
 
   return (
@@ -132,7 +131,7 @@ const Sidebar = ({
               <FlexBetween color={theme.palette.secondary.main}>
                 <Box display="flex" alignItems="center" gap="0.5rem">
                   <Typography variant="h4" fontWeight="bold">
-                    ECOMVISION
+                    DESCOMPLICAI
                   </Typography>
                 </Box>
                 {!isNonMobile && (
@@ -143,7 +142,7 @@ const Sidebar = ({
               </FlexBetween>
             </Box>
             <List>
-              {navItems.map(({ text, icon }) => {
+              {navItems.map(({ text, icon, link }) => {
                 if (!icon) {
                   return (
                     <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
@@ -151,22 +150,21 @@ const Sidebar = ({
                     </Typography>
                   );
                 }
-                const lcText = text.toLowerCase();
 
                 return (
                   <ListItem key={text} disablePadding>
                     <ListItemButton
                       onClick={() => {
-                        navigate(`/${lcText}`);
-                        setActive(lcText);
+                        navigate(link);
+                        setActive(link);
                       }}
                       sx={{
                         backgroundColor:
-                          active === lcText
+                          active === link
                             ? theme.palette.secondary[300]
                             : "transparent",
                         color:
-                          active === lcText
+                          active === link
                             ? theme.palette.primary[600]
                             : theme.palette.secondary[100],
                       }}
@@ -175,7 +173,7 @@ const Sidebar = ({
                         sx={{
                           ml: "2rem",
                           color:
-                            active === lcText
+                            active === link
                               ? theme.palette.primary[600]
                               : theme.palette.secondary[200],
                         }}
@@ -183,7 +181,7 @@ const Sidebar = ({
                         {icon}
                       </ListItemIcon>
                       <ListItemText primary={text} />
-                      {active === lcText && (
+                      {active === link && (
                         <ChevronRightOutlined sx={{ ml: "auto" }} />
                       )}
                     </ListItemButton>

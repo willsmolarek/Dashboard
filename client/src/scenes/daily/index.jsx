@@ -49,7 +49,7 @@ const Daily = () => {
 
   return (
     <Box m="1.5rem 2.5rem">
-      <Header title="DAILY SALES" subtitle="Chart of daily sales" />
+      <Header title="VENDAS DIÁRIAS" subtitle="Gráfico de vendas diárias" />
       <Box height="75vh">
         <Box display="flex" justifyContent="flex-end">
           <Box>
@@ -128,7 +128,7 @@ const Daily = () => {
               tickSize: 5,
               tickPadding: 5,
               tickRotation: 90,
-              legend: "Month",
+              legend: "Mês",
               legendOffset: 60,
               legendPosition: "middle",
             }}
@@ -177,7 +177,7 @@ const Daily = () => {
             ]}
           />
         ) : (
-          <>Loading...</>
+          <>Carregando...</>
         )}
       </Box>
     </Box>
